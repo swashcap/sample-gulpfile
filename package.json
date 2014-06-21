@@ -1,0 +1,19 @@
+{
+  "name": "sample-gulp",
+  "version": "0.0.1",
+  "description": "Sample gulp build file.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/swashcap/sample-gulp"
+  },
+  "author": "swashcap@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/swashcap/sample-gulp/issues"
+  },
+  "homepage": "https://github.com/swashcap/sample-gulp"
+}
