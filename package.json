@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/swashcap/sample-gulp/issues"
   },
-  "homepage": "https://github.com/swashcap/sample-gulp"
+  "homepage": "https://github.com/swashcap/sample-gulp",
+  "devDependencies": {
+    "gulp": "^3.8.1"
+  }
 }
