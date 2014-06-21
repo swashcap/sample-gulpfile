@@ -8,6 +8,7 @@ var jshint = require('gulp-jshint');
 var uglify = require('gulp-uglify');
 var jshintStylish = require('jshint-stylish');
 var rename = require('gulp-rename');
+var imagemin = require('gulp-imagemin');
 
 gulp.task('styles', function () {
   return gulp.src('assets/css/scss/main.scss')
@@ -32,4 +33,10 @@ gulp.task('scripts', function () {
     .pipe(gulp.dest('assets/js/'));
 });
 
-gulp.task('default', ['styles', 'scripts']);
+gulp.task('images', function () {
+  gulp.src('assets/img/**/*.{png,jpg,jpeg,gif}')
+    .pipe(imagemin())
+    .pipe(gulp.dest('assets/img/'));
+});
+
+gulp.task('default', ['styles', 'scripts', 'images']);
