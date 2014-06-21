@@ -40,3 +40,11 @@ gulp.task('images', function () {
 });
 
 gulp.task('default', ['styles', 'scripts', 'images']);
+
+gulp.task('watch', function() {
+  gulp.watch('assets/css/scss/**/*.scss', ['styles']);
+  gulp.watch([
+    'assets/js/**/*.js',
+    '!assets/js/**/*.min.js'
+  ], ['scripts']);
+});
