@@ -6,3 +6,4 @@ bower_components
 
 # Ignore compiled files
 assets/css/main.css
+assets/js/app.min.js

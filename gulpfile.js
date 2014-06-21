@@ -1,8 +1,13 @@
+/* global require */
 'use strict';
 
 var gulp = require('gulp');
 var sass = require('gulp-ruby-sass');
 var autoprefixer = require('gulp-autoprefixer');
+var jshint = require('gulp-jshint');
+var uglify = require('gulp-uglify');
+var jshintStylish = require('jshint-stylish');
+var rename = require('gulp-rename');
 
 gulp.task('styles', function () {
   return gulp.src('assets/css/scss/main.scss')
@@ -14,4 +19,17 @@ gulp.task('styles', function () {
     .pipe(gulp.dest('assets/css/'));
 });
 
-gulp.task('default', ['styles']);
+gulp.task('scripts', function () {
+  gulp.src(['gulpfile.js', 'assets/js/**/*.js', '!assets/js/**/*.min.js'])
+    .pipe(jshint())
+    .pipe(jshint.reporter(jshintStylish));
+
+  return gulp.src('assets/js/app.js')
+    .pipe(uglify())
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(gulp.dest('assets/js/'));
+});
+
+gulp.task('default', ['styles', 'scripts']);
